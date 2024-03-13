@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Navigation from "../../component/navigation";
+import Navigation from "../../components/navigation";
 import Link from "next/link";
 
 export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
