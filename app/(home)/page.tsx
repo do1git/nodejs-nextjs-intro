@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navigation from "../../components/navigation";
 import Link from "next/link";
+import Movie from "../../components/movie";
 
 export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
@@ -33,7 +34,13 @@ export default async function HomePage() {
       <p>TOP MOVIES</p>
       {movies.map((movie) => (
         <li key={movie.id}>
-          <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
+          {/* <Link href={`/movies/${movie.id}`}>{movie.title}</Link> */}
+          <Movie
+            key={movie.id}
+            id={movie.id}
+            posterPath={movie.poster_p2ath}
+            title={movie.title}
+          />
         </li>
       ))}
       {/* {isLoading ? "Loading..." : JSON.stringify(movies)} */}

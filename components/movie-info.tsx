@@ -1,6 +1,6 @@
 import { API_URL } from "../app/(home)/page";
 
-const getMovie = async (id: string) => {
+export const getMovie = async (id: string) => {
   console.log(`Fetching Movie ${Date.now()}`);
   await new Promise((resolve) => setTimeout(resolve, 5000));
 

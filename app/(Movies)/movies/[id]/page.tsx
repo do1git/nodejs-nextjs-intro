@@ -2,12 +2,23 @@
 
 import { Suspense } from "react";
 import { API_URL } from "../../../(home)/page";
-import MovieInfo from "../../../../components/movie-info";
+import MovieInfo, { getMovie } from "../../../../components/movie-info";
 import MovieVideos from "../../../../components/movie-video";
 
-export const metadata = {
-  title: "DETAIL",
-};
+// export const metadata = {
+//   title: "DETAIL",
+// };
+
+interface IParams {
+  params: { id: string };
+}
+
+export async function generateMetadata({ params: { id } }: IParams) {
+  const movie = await getMovie(id);
+  return {
+    title: movie.title,
+  };
+}
 
 // const ComponentName = async()=>{}
 // 로딩을 사용할 것임으로 비동기 함수로 만든다
